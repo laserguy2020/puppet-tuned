@@ -40,6 +40,8 @@ class tuned::params {
           $profiles_path = '/etc/tuned'
           $active_profile_conf = 'active_profile'
         }
+      }
+    }
 
     'SLES': {
       case $::operatingsystemmajrelease {
@@ -55,15 +57,9 @@ class tuned::params {
       }
     }
 
-        default: {
-          fail("Unsupported OS release: \
-${::operatingsystem} ${::operatingsystemmajrelease}")
-        }
-      }
-    }
-
     default: {
-      fail("Unsupported OS: ${::operatingsystem}")
+        fail("Unsupported OS release: \
+${::operatingsystem} ${::operatingsystemmajrelease}")
     }
   }
 }
