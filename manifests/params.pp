@@ -52,6 +52,7 @@ class tuned::params {
           $profiles_path = '/etc/tuned'
           $active_profile_conf = 'active_profile'
         }
+      }
     }
 
         default: {
